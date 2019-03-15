@@ -35,3 +35,22 @@ https://leetcode.com/articles/students-report-by-geography/
 
 https://www.periscopedata.com/blog/website-response-time-ntile
 https://mode.com/sql-tutorial/introduction-to-sql/
+
+
+CUM sum without window function- https://stackoverflow.com/questions/2563918/create-a-cumulative-sum-column-in-mysql
+set @csum:=0;
+update employees set  department_id=(@csum:=@csum+department_id) order by id;
+select * from employees;
+
+wrong method:-
+/*
+select * from employees;
+set @csum:=0;
+update employees set  department_id=(@csum:=@csum+department_id) order by id;
+update employees set department_id=NULL where department_id=15
+
+create table emp1 as select id,first_name,last_name,salary, department_id,lag(department_id,1) over (order by id) as lag_val from employees
+set @val:=0;
+update emp1 set (case when lag_val=NULL THEN department_id=@val ELSE department_id=lag_val AND @val:=lag_val END)
+*/
+ 
