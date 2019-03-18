@@ -54,3 +54,9 @@ set @val:=0;
 update emp1 set (case when lag_val=NULL THEN department_id=@val ELSE department_id=lag_val AND @val:=lag_val END)
 */
  
+
+forward filling of null values
+UPDATE mytable
+SET number = (@n := COALESCE(number, @n))
+ORDER BY date;
+
