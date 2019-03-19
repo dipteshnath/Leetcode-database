@@ -60,3 +60,4 @@ UPDATE mytable
 SET number = (@n := COALESCE(number, @n))
 ORDER BY date;
 
+https://stackoverflow.com/questions/2613005/how-to-join-a-count-from-a-table-and-then-effect-that-count-with-another-join
