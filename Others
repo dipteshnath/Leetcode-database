@@ -60,5 +60,6 @@ UPDATE mytable
 SET number = (@n := COALESCE(number, @n))
 ORDER BY date;
 
+https://stackoverflow.com/questions/11709043/mysql-update-column-with-value-from-another-table
 https://stackoverflow.com/questions/2613005/how-to-join-a-count-from-a-table-and-then-effect-that-count-with-another-join
 https://nifannn.github.io/2017/10/27/SQL-Notes-Leetcode-178-Rank-Scores/
